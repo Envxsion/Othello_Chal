@@ -3,7 +3,7 @@ class OthelloBoard:
         # 8x8 grid
         self.board = [['.' for _ in range(8)] for _ in range(8)]
         # Default start pos
-        self.board[3][3] = self.board[4][4] = 'W'
+        self.board[3][3] = self.board[4][4] = 'W'  #starts from 0 not 1, hence 3,3
         self.board[3][4] = self.board[4][3] = 'B'
 
     def print_board(self):
@@ -66,7 +66,7 @@ class OthelloBoard:
         else:
             return 'Tie'
 
-    def is_game_over(self):
+    def game_over(self):
         for row in self.board:
             if '.' in row:
                 return False
